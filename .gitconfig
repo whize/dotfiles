@@ -1,0 +1,53 @@
+[core]
+    pager = less -q -R
+    excludesfile = ~/.gitignore
+    preloadindex = true
+
+[color]
+    ui = auto
+
+[color "diff"]
+    # http://qiita.com/qurage/items/452f2debb64e2708a46c
+    meta = 242 238
+    frag = 239 236
+    old = 167 normal
+    new = 030 normal
+    context = 240
+    commit = 246 024
+
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    df = diff
+    t  = typechange
+    graph = log --graph --date-order --all --prety=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
+    br = git branch | grep -v '^*' | cut -c3- | fzy | xargs git checkout
+
+[help]
+    autocorrect = 1
+
+[user]
+    name = whize
+    email = whize.k@gmail.com
+
+[pager]
+    log  = diff-highlight | less -RX
+    show = diff-highlight | less -RX
+    diff = diff-highlight | less -RX
+
+[diff]
+    tool      = vimdiff
+    algorithm = histogram
+    compactionHeuristic = true
+
+[ghq]
+    root = ~/src
+
+[merge]
+    tool = vimdiff
+
+[tig "bind"]
+    generic = g move-first-line
+    generic = G move-last-line
+
