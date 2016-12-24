@@ -17,8 +17,9 @@ zplug "~/.modules", \
 zplug "~/.zsh", \
     from:local, \
     defer:2, \
-    use:"<->_*.zsh", \
-    ignore:'40*'
+    use:"<->_*.zsh"
+    # use:"<->_*.zsh", \
+    # ignore:'40*'
 
 zplug "b4b4r07/zsh-gomi", \
     as:command, \
@@ -75,7 +76,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 
 zplug "zsh-users/zsh-syntax-highlighting", \
-    defer:19
+    defer:3
 
 zplug "b4b4r07/peco-tmux.sh", \
     as:command, \
@@ -113,4 +114,3 @@ zplug "b4b4r07/git-open", as:command, at:patch-1
 zplug "b4b4r07/open-link.sh", as:command, use:'*.bash', rename-to:'ol'
 
 zplug "mattn/jvgrep", as:command, from:gh-r
-

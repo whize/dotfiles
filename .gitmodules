@@ -1,3 +1,6 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = git@github.com:tmux-plugins/tpm.git
+[submodule "etc/init/assets/pygment"]
+	path = etc/init/assets/pygment
+	url = git@github.com:john2x/solarized-pygment.git

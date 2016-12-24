@@ -122,3 +122,16 @@ git_modified_files() {
 
 #alias ls='gls --color=auto -F'
 alias ls='ls -G'
+
+
+if has 'atom'; then
+    alias zshconfig='atom ~/.zshrc'
+fi
+
+alias memo='vim + ~/Document/memo.md'
+
+if has 'ansible-vault'; then
+    alias mysec='ansible-vault edit ~/Document/secret/md'
+fi
+
+alias sshconfig='vim ~/.ssh/config'

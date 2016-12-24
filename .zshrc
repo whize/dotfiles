@@ -34,7 +34,7 @@ $DOTPATH/bin/tmuxx
 
 if [[ -f ~/.zplug/init.zsh ]]; then
     export ZPLUG_LOADFILE="$HOME/.zsh/zplug.zsh"
-	source ~/src/github.com/zplug/zplug/init.zsh
+    source ~/src/github.com/zplug/zplug/init.zsh
 
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
@@ -47,6 +47,11 @@ if [[ -f ~/.zplug/init.zsh ]]; then
     echo
     zplug load --verbose
 fi
+
+# なぜか、phpbrew/bashrcするとPATHが消えるため、一次退避
+OLD_PATH=$PATH
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+export PATH=$PATH:$OLD_PATH
 
 printf "\n$fg_bold[cyan]This is ZSH $fg_bold[red]${ZSH_VERSION}"
 printf "$fg_bold[cyan] - DISPLAY on $fg_bold[red]$DISPLAY$reset_color\n\n"

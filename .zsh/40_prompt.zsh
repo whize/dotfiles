@@ -42,7 +42,7 @@ PROMPT="%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}[%(?.%{${fg[green]}%}.%{${fg[
 #
 setopt prompt_subst
 # Automatically hidden rprompt
-# however, 
+# however,
 setopt transient_rprompt
 
 r-prompt() {

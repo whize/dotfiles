@@ -18,6 +18,7 @@ fpath=( \
     ~/.zsh/functions(N-/) \
     ~/.zsh/plugins/zsh-completions(N-/) \
     /usr/local/share/zsh/site-functions(N-/) \
+    $(brew --prefix git)/etc/bash_completion.d(N-/) \
     $fpath \
 )
 

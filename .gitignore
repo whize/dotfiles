@@ -3,4 +3,3 @@
 .*secret
 .config/*
 !.config/fish
-bin/*
