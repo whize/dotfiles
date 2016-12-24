@@ -11,12 +11,12 @@ zplug "zplug/zplug"
 
 zplug "~/.modules", \
     from:local, \
-    nice:1, \
+    defer:1, \
     use:"*.sh"
 
 zplug "~/.zsh", \
     from:local, \
-    nice:2, \
+    defer:2, \
     use:"<->_*.zsh", \
     ignore:'40*'
 
@@ -75,7 +75,7 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 
 zplug "zsh-users/zsh-syntax-highlighting", \
-    nice:19
+    defer:19
 
 zplug "b4b4r07/peco-tmux.sh", \
     as:command, \
@@ -87,9 +87,9 @@ zplug "philovivero/distribution", \
     use:distribution, \
     if:'(( $+commands[perl] ))'
 
-zplug "mitmproxy/mitmproxy", \
-    as:command, \
-    hook-build:"sudo python ./setup.py install"
+# zplug "mitmproxy/mitmproxy", \
+#     as:command, \
+#     hook-build:"sudo python ./setup.py install"
 
 zplug "tcnksm/ghr", \
     as:command, \

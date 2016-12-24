@@ -1,7 +1,7 @@
 
 umask 022
 limit coredumpsize 0
-bindkey -d
+bindkey -e
 
 if [[ -f ~/.path ]]; then
     source ~/.path
@@ -13,8 +13,8 @@ if [[ -z $DOTPATH ]]; then
     echo "$fg[red]cannot start ZSH, \$DOTPATH not set$reset_color" 1>&2
     return 1
 fi
-
-export VITAL_PATH="$DOTPATH/etc/lib/vital.sh"
+echo $DOTPATH
+export VITAL_PATH="$DOTPATH/.dotfiles/etc/lib/vital.sh"
 if [[ -f $VITAL_PATH ]]; then
     source "$VITAL_PATH"
 fi

@@ -1,5 +1,16 @@
 #!/bin/bash
+#                                    
+#         _ _        _       _       
+#        (_) |      | |     | |      
+#  __   ___| |_ __ _| |  ___| |__    
+#  \ \ / / | __/ _` | | / __| '_ \   
+#   \ V /| | || (_| | |_\__ \ | | |  
+#    \_/ |_|\__\__,_|_(_)___/_| |_|  
+#                                    
+#                                    
 
+# PLATFORM is the environment variable that
+# retrieves the name of the running platform
 export PLATFORM
 
 _TAB_="$(printf "\t")"
@@ -11,8 +22,9 @@ vitalize() {
     return 0
 }
 
+# Gerenal utilities {{{1
 is_interactive() {
-    if [ "$(-/i/}" != "$-" ]; then
+    if [ "${-/i/}" != "$-" ]; then
         return 0
     fi
     return 1
@@ -31,6 +43,7 @@ is_at_least() {
         return 1
     fi
 
+    # For Z shell
     if is_zsh; then
         autoload -Uz is-at-least
         is-at-least "${1:-}"
@@ -40,16 +53,20 @@ is_at_least() {
     atleast="$(echo $1 | sed -e 's/\.//g')"
     version="$(echo ${BASH_VERSION:-0.0.0} | sed -e 's/^\([0-9]\{1,\}\.[0-9]\{1,\}\.[0-9]\{1,\}\).*/\1/' | sed -e 's/\.//g')"
 
+    # zero padding
     while [ ${#atleast} -ne 6 ]
     do
         atleast="${atleast}0"
     done
 
+    # zero padding
     while [ ${#version} -ne 6 ]
     do
         version="${version}0"
     done
 
+    # verbose
+    #echo "$atleast < $version"
     if [ "$atleast" -le "$version" ]; then
         return 0
     else
@@ -57,10 +74,13 @@ is_at_least() {
     fi
 }
 
+# ostype returns the lowercase OS name
 ostype() {
+    # shellcheck disable=SC2119
     uname | lower
 }
 
+# os_detect export the PLATFORM variable as you see fit
 os_detect() {
     export PLATFORM
     case "$(ostype)" in
@@ -71,6 +91,7 @@ os_detect() {
     esac
 }
 
+# is_osx returns true if running OS is Macintosh
 is_osx() {
     os_detect
     if [ "$PLATFORM" = "osx" ]; then
@@ -81,6 +102,7 @@ is_osx() {
 }
 alias is_mac=is_osx
 
+# is_linux returns true if running OS is GNU/Linux
 is_linux() {
     os_detect
     if [ "$PLATFORM" = "linux" ]; then
@@ -90,6 +112,7 @@ is_linux() {
     fi
 }
 
+# is_bsd returns true if running OS is FreeBSD
 is_bsd() {
     os_detect
     if [ "$PLATFORM" = "bsd" ]; then
@@ -99,6 +122,7 @@ is_bsd() {
     fi
 }
 
+# get_os returns OS name of the platform that is running
 get_os() {
     local os
     for os in osx linux bsd; do
@@ -125,7 +149,7 @@ e_warning() {
 }
 
 e_done() {
-    printf "\033[37;1m%s\033[m...\033[32mOK\033[m\n" "✔ $*"
+    printf " \033[37;1m%s\033[m...\033[32mOK\033[m\n" "✔ $*"
 }
 
 e_arrow() {
@@ -243,6 +267,7 @@ log_echo() {
     logging TITLE "$1"
 }
 
+# is_exists returns true if executable $1 exists in $PATH
 is_exists() {
     which "$1" >/dev/null 2>&1
     return $?
@@ -264,6 +289,7 @@ is_login_shell() {
     [ "$SHLVL" = 1 ]
 }
 
+# is_git_repo returns true if cwd is in git repository
 is_git_repo() {
     git rev-parse --is-inside-work-tree &>/dev/null
     return $?
@@ -275,13 +301,13 @@ is_screen_running() {
 }
 
 # is_tmux_runnning returns true if tmux is running
-is_tmux_runnning() {
+is_tmux_running() {
     [ ! -z "$TMUX" ]
 }
 
 # is_screen_or_tmux_running returns true if GNU screen or tmux is running
 is_screen_or_tmux_running() {
-    is_screen_running || is_tmux_runnning
+    is_screen_running || is_tmux_running
 }
 
 # shell_has_started_interactively returns true if the current shell is
@@ -290,6 +316,7 @@ shell_has_started_interactively() {
     [ ! -z "$PS1" ]
 }
 
+# is_ssh_running returns true if the ssh deamon is available
 is_ssh_running() {
     [ ! -z "$SSH_CLIENT" ]
 }
@@ -325,6 +352,7 @@ echon() {
     echo "$*" | tr -d '\n'
 }
 
+# noecho is the same as echon
 noecho() {
     if [ "$(echo -n)" = "-n" ]; then
         echo "${*:-> }\c"
@@ -594,4 +622,3 @@ fi
 
 # __END__ {{{1
 # vim:fdm=marker
-

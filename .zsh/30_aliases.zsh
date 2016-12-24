@@ -120,5 +120,5 @@ git_modified_files() {
     done
 }
 
-alias ls='gls --color=auto -F'
-
+#alias ls='gls --color=auto -F'
+alias ls='ls -G'
