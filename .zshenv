@@ -18,7 +18,7 @@ fpath=( \
     ~/.zsh/functions(N-/) \
     ~/.zsh/plugins/zsh-completions(N-/) \
     /usr/local/share/zsh/site-functions(N-/) \
-    $(brew --prefix git)/etc/bash_completion.d(N-/) \
+    $(/usr/local/bin/brew --prefix git)/etc/bash_completion.d(N-/) \
     $fpath \
 )
 
@@ -106,6 +106,7 @@ export INTERACTIVE_FILTER="fzf:peco:percol:gof:pick"
 # keybind ^X^X
 export ONELINER_FILE="$DOTPATH/doc/misc/commands.txt"
 
+[[ -f ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 [[ -f ~/.secret ]] && source ~/.secret
 
 # vim:fdm=marker expandtab fdc=3 ft=tmux ts=4 sw=4 sts=4 number:

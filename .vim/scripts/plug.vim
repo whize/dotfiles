@@ -44,8 +44,11 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'b4b4r07/vim-hcl'
     Plug 'fatih/vim-hclfmt'
     Plug has('lua') ? 'Shougo/neocomplete.vim' : 'Shougo/neocomplcache'
+    Plug 'violetyk/neocomplete-php.vim'
     Plug g:env.is_gui ? 'itchyny/lightline.vim' : ''
     Plug 'Dkendal/fzy-vim'
+    Plug 'AndrewRadev/splitjoin.vim'
+    Plug 'thinca/vim-ref'
 
     " syntax? language support
     Plug 'fatih/vim-go', { 'for': 'go' }
@@ -64,7 +67,7 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'zplug/vim-zplug', { 'for': 'zplug' }
 
     " colorscheme
-    Plug 'b4b4r07/solarized.vim'
+    Plug 'altercation/vim-colors-solarized'
     Plug 'w0ng/vim-hybrid'
     Plug 'junegunn/seoul256.vim'
     Plug 'nanotech/jellybeans.vim'

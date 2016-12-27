@@ -27,7 +27,7 @@ function zle-keymap-select zle-line-init zle-line-finish {
             PROMPT_2="$fg[red]-- REPLACE --$reset_color"
             ;;
     esac
-    PROMPT="%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}[%(?.%{${fg[green]}%}.%{${fg[red]}%})${HOST}%{${reset_color}%}]%# "
+    PROMPT="%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}[%(?.%{${fg[green]}%}.%{${fg[red]}%})${USER}@${HOST}%{${reset_color}%}]%# "
     zle reset-prompt
 }
 
@@ -36,7 +36,7 @@ zle -N zle-line-finish
 zle -N zle-keymap-select
 zle -N edit-command-line
 
-PROMPT="%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}[%(?.%{${fg[green]}%}.%{${fg[red]}%})${HOST}%{${reset_color}%}]%# "
+PROMPT="%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}[%(?.%{${fg[green]}%}.%{${fg[red]}%})${USER}@${HOST}%{${reset_color}%}]%# "
 
 # Right PROMPT
 #

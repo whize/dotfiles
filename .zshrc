@@ -13,7 +13,7 @@ if [[ -z $DOTPATH ]]; then
     echo "$fg[red]cannot start ZSH, \$DOTPATH not set$reset_color" 1>&2
     return 1
 fi
-echo $DOTPATH
+
 export VITAL_PATH="$DOTPATH/.dotfiles/etc/lib/vital.sh"
 if [[ -f $VITAL_PATH ]]; then
     source "$VITAL_PATH"
@@ -47,11 +47,6 @@ if [[ -f ~/.zplug/init.zsh ]]; then
     echo
     zplug load --verbose
 fi
-
-# なぜか、phpbrew/bashrcするとPATHが消えるため、一次退避
-OLD_PATH=$PATH
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-export PATH=$PATH:$OLD_PATH
 
 printf "\n$fg_bold[cyan]This is ZSH $fg_bold[red]${ZSH_VERSION}"
 printf "$fg_bold[cyan] - DISPLAY on $fg_bold[red]$DISPLAY$reset_color\n\n"

@@ -44,6 +44,12 @@ repo = 'tyru/caw.vim'
 repo = 'AndrewRadev/gapply.vim'
 
 [[plugins]]
+repo = 'AndrewRadev/splitjoin.vim'
+
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+[[plugins]]
 repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
@@ -54,3 +60,6 @@ repo = 'junegunn/seoul256.vim'
 
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'

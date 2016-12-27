@@ -34,5 +34,12 @@ if [ -d ~/.pyenv ]; then
     export PATH=$PYENV_ROOT/bin:"$PATH"
 fi
 
+if [ -d ~/.zplug/bin ]; then
+    export PATH=~/.zplug/bin:"$PATH"
+fi
+
 # token for github access
-export HOMEBREW_GITHUB_API_TOKEN=18bdc3cc9788b980ef34768285b3ba4fb880e5c7
+if [ -z $HOMEBREW_GITHUB_API_TOKEN ]; then
+    echo "Please set HOMEBREW_GITHUB_API_TOKEN environment variable to use Homebrew."
+fi
+
