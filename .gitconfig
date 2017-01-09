@@ -51,3 +51,5 @@
     generic = g move-first-line
     generic = G move-last-line
 
+[init]
+	templatedir = ~/.git_hooks

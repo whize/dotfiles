@@ -43,8 +43,10 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'kien/ctrlp.vim'
     Plug 'b4b4r07/vim-hcl'
     Plug 'fatih/vim-hclfmt'
+    Plug 'Shougo/context_filetype.vim'
     Plug has('lua') ? 'Shougo/neocomplete.vim' : 'Shougo/neocomplcache'
-    Plug 'violetyk/neocomplete-php.vim'
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
     Plug g:env.is_gui ? 'itchyny/lightline.vim' : ''
     Plug 'Dkendal/fzy-vim'
     Plug 'AndrewRadev/splitjoin.vim'
@@ -65,6 +67,10 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
     Plug 'maksimr/vim-jsbeautify', { 'for': 'javascript' }
     Plug 'zplug/vim-zplug', { 'for': 'zplug' }
+    Plug 'violetyk/neocomplete-php.vim', { 'for': 'php' }
+    Plug 'mattn/emmet-vim'
+    Plug 'vim-scripts/tagbar-phpctags', { 'for' : 'php' }
+    Plug 'vim-scripts/tagbar'
 
     " colorscheme
     Plug 'altercation/vim-colors-solarized'

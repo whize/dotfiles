@@ -63,3 +63,16 @@ repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'vim-scripts/taglist.vim'
+
+[[plugins]]
+repo = 'vim-scripts/tagbar-phpctags'
+build = '''
+    chmod +x bin/phpctags
+'''
+
+[[plugins]]
+repo = 'vim-scripts/tagbar'
+

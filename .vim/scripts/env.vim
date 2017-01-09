@@ -69,5 +69,5 @@ function! IsMac() abort
     return g:env.is_.mac
 endfunction
 
-" __END__ {{{1
+" __END__
 " vim:fdm=marker expandtab fdc=3:

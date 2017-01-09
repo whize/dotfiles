@@ -497,5 +497,8 @@ else
     "endif
 endif
 
+if g:plug.is_installed('vim-ref.vim') "{{{1
+    let g:ref_phpmanual_path = $HOME . '/.vim/ref/php-chunked-xhtml'
+endif
 " __END__ {{{1
 " vim:fdm=marker expandtab fdc=3:

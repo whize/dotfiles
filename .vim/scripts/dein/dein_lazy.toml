@@ -7,6 +7,9 @@ repo = 'b4b4r07/mru.vim'
 on_cmd = 'MRU'
 
 [[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
 repo = 'Shougo/neocomplete.vim'
 depends = 'context_filetype.vim'
 if = "has('lua')"
@@ -18,9 +21,19 @@ hook_source = '''
 
 [[plugins]]
 repo = 'violetyk/neocomplete-php.vim'
+on_ft = 'php'
 hook_source = '''
   let g:neocomplete_php_locale = 'ja'
 '''
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -52,4 +65,4 @@ on_ft = 'fish'
 
 [[plugins]]
 repo = 'chase/vim-ansible-yaml'
-#on_ft = 'yaml'
+

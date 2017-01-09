@@ -4,3 +4,5 @@
 .*secret
 .config/*
 !.config/fish
+.tags
+.tags1
