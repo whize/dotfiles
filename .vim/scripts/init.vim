@@ -100,7 +100,7 @@ if s:load('plug.vim')
   call s:load('custom.vim')
 endif
 " call s:load('dein.vim', g:false)
-call s:load('dein.vim')
+" call s:load('dein.vim')
 call s:load('func.vim')
 call s:load('base.vim')
 call s:load('view.vim')

@@ -258,6 +258,9 @@ if g:plug.is_installed('neocomplete.vim') "{{{1
     let g:neocomplete#fallback_mappings = ["\<C-x>\<C-o>", "\<C-x>\<C-n>"]
 endif
 
+if g:plug.is_installed('neocomplete-php.vim') "{{{1
+    let g:neocomplete_php_locale = 'ja'
+endif
 if g:plug.is_installed('mru.vim') "{{{1
     let MRU_Auto_Close = 1
     let MRU_Window_Height = 30
@@ -499,6 +502,26 @@ endif
 
 if g:plug.is_installed('vim-ref.vim') "{{{1
     let g:ref_phpmanual_path = $HOME . '/.vim/ref/php-chunked-xhtml'
+endif
+
+if g:plug.is_installed('tagbar') "{{{1
+    nmap <F8> :TagbarToggle<CR>
+    let g:tagbar_left = 1
+    let g:tagbar_autofocus = 1
+endif
+if g:plug.is_installed('syntatic') "{{{1
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntaticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntatic_always_populate_loc_list = 1
+    let g:syntatic_auto_loc_list = 1
+    let g:syntatic_check_on_open = 1
+    let g:syntatic_check_on_wq = 0
+endif
+
+if g:plug.is_installed('emmet-vim') "{{{1
+    let g:user_emmet_leader_key = '<C-E>'
 endif
 " __END__ {{{1
 " vim:fdm=marker expandtab fdc=3:

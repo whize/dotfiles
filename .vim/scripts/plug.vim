@@ -26,7 +26,7 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'tweekmonster/fzf-filemru'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-endwise'
-    Plug 'b4b4r07/enhancd', { 'tag': '2.2.1' }
+    Plug 'b4b4r07/enhancd', { 'tag': 'v2.2.1' }
     Plug 'Shougo/vimproc.vim',  { 'do': 'make' }
     Plug 'vim-jp/vimdoc-ja'
     Plug 'osyo-manga/vim-anzu'
@@ -51,6 +51,7 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'Dkendal/fzy-vim'
     Plug 'AndrewRadev/splitjoin.vim'
     Plug 'thinca/vim-ref'
+    Plug 'vim-syntastic/syntastic'
 
     " syntax? language support
     Plug 'fatih/vim-go', { 'for': 'go' }
@@ -71,6 +72,7 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'mattn/emmet-vim'
     Plug 'vim-scripts/tagbar-phpctags', { 'for' : 'php' }
     Plug 'vim-scripts/tagbar'
+    Plug 'davidhalter/jedi-vim', { 'dir' : '~/.vim/plugged/jedi-vim', 'do' : 'git submodule update --init' }
 
     " colorscheme
     Plug 'altercation/vim-colors-solarized'
