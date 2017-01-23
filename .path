@@ -30,7 +30,9 @@ readlink() {
 }
 
 # get dotpath as full path
-dotpath="$(dirname "$(readlink "$0")")"
+# not use readlink because a .path file is symbolic link
+# dotpath="$(dirname "$(readlink "$0")")"
+dotpath="$(dirname "$0")"
 
 # check if the current shell is run with the interactive mode
 if echo "$-" | grep -q "i"; then
