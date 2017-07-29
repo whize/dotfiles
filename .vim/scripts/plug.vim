@@ -47,7 +47,7 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug has('lua') ? 'Shougo/neocomplete.vim' : 'Shougo/neocomplcache'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
-    Plug g:env.is_gui ? 'itchyny/lightline.vim' : ''
+"    Plug g:env.is_gui ? 'itchyny/lightline.vim' : ''
     Plug 'Dkendal/fzy-vim'
     Plug 'AndrewRadev/splitjoin.vim'
     Plug 'thinca/vim-ref'
@@ -70,8 +70,8 @@ if g:plug.ready() && g:env.vimrc.plugin_on
     Plug 'zplug/vim-zplug', { 'for': 'zplug' }
     Plug 'violetyk/neocomplete-php.vim', { 'for': 'php' }
     Plug 'mattn/emmet-vim'
-    Plug 'vim-scripts/tagbar-phpctags', { 'for' : 'php' }
-    Plug 'vim-scripts/tagbar'
+    Plug 'vim-php/tagbar-phpctags.vim', { 'for' : 'php' }
+    Plug 'majutsushi/tagbar'
     Plug 'davidhalter/jedi-vim', { 'dir' : '~/.vim/plugged/jedi-vim', 'do' : 'git submodule update --init' }
 
     " colorscheme
